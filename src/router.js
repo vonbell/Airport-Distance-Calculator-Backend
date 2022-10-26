@@ -4,7 +4,7 @@ var Amadeus = require('amadeus');
 
 // dotenv variables
 const { CLIENT_ID, CLIENT_SECRET } = require('./config');
-// const API = `api`;
+const API = `api`;
 
 // Amadeus client for getting authToken to make call to amadeus API 
 var amadeus = new Amadeus({
