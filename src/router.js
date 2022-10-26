@@ -4,7 +4,7 @@ var Amadeus = require('amadeus');
 
 // dotenv variables
 const { CLIENT_ID, CLIENT_SECRET } = require('./config');
-const API = `api`;
+const API = `https://airport-distance-backend.herokuapp.com/`;
 
 // Amadeus client for getting authToken to make call to amadeus API 
 var amadeus = new Amadeus({
@@ -13,7 +13,7 @@ var amadeus = new Amadeus({
 });
 
 // Endpoint
-router.get(`/airports`, async (req, res, next) => {
+router.get(`${API}/airports`, async (req, res, next) => {
     const { page, subType, keyword, countryCode } = req.query;
     // API call with params requested from client app
     const response = await amadeus.referenceData.locations.get({
